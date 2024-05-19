@@ -68,33 +68,34 @@ function Header() {
         {buttonCategories.map((category, index) => {
           const categoryId = category.name.toLowerCase().replace(/\s+/g, "-");
           return (
-            <p
+            <Link
               key={index}
-              onClick={() => setSelected(category.name)}
-              className="group"
+              to={categoryId}
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
-              <Link
+              <div
                 key={index}
-                to={categoryId}
-                spy={true}
-                smooth={true}
-                offset={0}
-                duration={500}
+                onClick={() => setSelected(category.name)}
+                className="group"
               >
                 <span
                   className={`text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
                 >
                   {category.name}
                 </span>
-              </Link>
-              <div
-                className={`w-full h-[2px] bg-[#FFC451] transition-transform duration-300 ease-in-out transform origin-center ${
-                  selected === category.name
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              ></div>
-            </p>
+
+                <div
+                  className={`w-full h-[2px] bg-[#FFC451] transition-transform duration-300 ease-in-out transform origin-center ${
+                    selected === category.name
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                ></div>
+              </div>
+            </Link>
           );
         })}
       </div>
