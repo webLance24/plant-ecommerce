@@ -9,7 +9,6 @@ function About() {
           ABOUT
         </button>
       </div>
-
       <div className="flex justify-center items-center text-[30px] mt-[20px]">
         <h1 className="text-[#444444]">
           Learn More <span className="text-[#E43C5C]">About US</span>
