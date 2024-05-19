@@ -1,6 +1,17 @@
 import { createContext, useContext } from "react";
 
-interface ComponentsProps {}
+interface ComponentsProps {
+  // hidden: boolean;
+  // setHidden: (hidden: boolean) => void;
+  // menu: boolean;
+  // setMenu: (menu: boolean) => void;
+  selected: string;
+  setSelected: (selected: string) => void;
+  isOpen: boolean;
+  toggleOpen: (isOpen: boolean) => void;
+  // changeLanguage: string;
+  // setChangeLanguage: (changeLanguage: string) => void;
+}
 
 export const MyContext = createContext<ComponentsProps | null>(null);
 

@@ -5,13 +5,21 @@ import Home from "./Components/Home";
 import About from "./Components/About";
 import Services from "./Components/Services";
 import Contact from "./Components/Contact";
+import { Example } from "./Components/Pages/Example";
+import { useState } from "react";
 
 function App() {
+  const [selected, setSelected] = useState(
+    new URLSearchParams(location.search).get("category") || "Home"
+  );
+  const [isOpen, toggleOpen] = useState<boolean>(false);
+
   return (
     <>
-      <MyContext.Provider value={{}}>
-        <Header />
+      <MyContext.Provider value={{ selected, setSelected, isOpen, toggleOpen }}>
         <Router>
+          <Header />
+          <Example />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
