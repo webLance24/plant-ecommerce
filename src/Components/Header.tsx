@@ -2,14 +2,12 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./Context";
 import heart from "../../public/assets/heart.png";
 import { useNavigate } from "react-router-dom";
-import { useHistory, useLocation } from "react-router-dom";
 
 function Header() {
-
   const navigate = useNavigate();
 
   const context = useContext(MyContext);
-  const { selected, setSelected, scrolled }: any = context;
+  const { selected, setSelected, scrolled, setScrolled }: any = context;
 
   const buttonCategories = [
     { name: "Home", path: "/" },
@@ -17,6 +15,24 @@ function Header() {
     { name: "Services", path: "/services" },
     { name: "Contact", path: "/contact" },
   ];
+
+  // use useeffect for when header scroll down show background
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Function to handle scroll event and update the current section
   const handleScroll = () => {
@@ -50,7 +66,7 @@ function Header() {
         scrolled ? "black" : "transparent"
       } bg-opacity-80 w-[100%] h-[70px] flex fixed justify-between items-center`}
     >
-      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[auto] ml-[auto]">
+      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[auto] ml-[100px]">
         {buttonCategories.map((category, index) => {
           return (
             <p

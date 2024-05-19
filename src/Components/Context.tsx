@@ -9,6 +9,8 @@ interface ComponentsProps {
   setSelected: (selected: string) => void;
   isOpen: boolean;
   toggleOpen: (isOpen: boolean) => void;
+  scrolled: boolean;
+  setScrolled: (scrolled: boolean) => void;
   // changeLanguage: string;
   // setChangeLanguage: (changeLanguage: string) => void;
 }

@@ -9,14 +9,22 @@ import { Example } from "./Components/Pages/Example";
 import { useState } from "react";
 
 function App() {
-  const [selected, setSelected] = useState(
-    new URLSearchParams(location.search).get("category") || "Home"
-  );
+  const [selected, setSelected] = useState<string>("Home");
   const [isOpen, toggleOpen] = useState<boolean>(false);
+  const [scrolled, setScrolled] = useState<boolean>(false);
 
   return (
     <>
-      <MyContext.Provider value={{ selected, setSelected, isOpen, toggleOpen }}>
+      <MyContext.Provider
+        value={{
+          selected,
+          setSelected,
+          isOpen,
+          toggleOpen,
+          scrolled,
+          setScrolled,
+        }}
+      >
         <Router>
           <Header />
           <Example />
