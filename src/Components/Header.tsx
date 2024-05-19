@@ -1,20 +1,13 @@
 import { useContext, useEffect } from "react";
 import { MyContext } from "./Context";
-import heart from "../../public/assets/heart.png";
-import { useNavigate } from "react-router-dom";
+import logo from "../../public/assets/logo.png";
+import { Link } from "react-scroll";
 
 function Header() {
-  const navigate = useNavigate();
-
   const context = useContext(MyContext);
   const { selected, setSelected, scrolled, setScrolled }: any = context;
 
-  const buttonCategories = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
-  ];
+  const buttonCategories = ["Home", "About", "Services", "Contact"];
 
   // use useeffect for when header scroll down show background
 
@@ -37,7 +30,7 @@ function Header() {
   // Function to handle scroll event and update the current section
   const handleScroll = () => {
     const sections = buttonCategories.map((category) =>
-      category.name.toLowerCase().replace(/\s+/g, "-")
+      category.toLowerCase().replace(/\s+/g, "-")
     );
     for (let i = 0; i < sections.length; i++) {
       const section = document.getElementById(sections[i]);
@@ -64,38 +57,48 @@ function Header() {
     <header
       className={`bg-${
         scrolled ? "black" : "transparent"
-      } bg-opacity-80 w-[100%] h-[70px] flex fixed justify-between items-center`}
+      } bg-opacity-80 w-[100%] h-[70px] flex fixed justify-between items-center z-[10]`}
     >
-      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[auto] ml-[100px]">
+      <img
+        className="w-[60px] cursor-pointer ml-[32px] mr-[auto]"
+        src={logo}
+        alt="here is weblance logo"
+      />
+      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[100px] ml-[auto]">
         {buttonCategories.map((category, index) => {
+          const categoryId = category.toLowerCase().replace(/\s+/g, "-");
           return (
-            <p
+            <Link
               key={index}
-              onClick={() => setSelected(category.name)}
-              className="group"
+              to={categoryId}
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
             >
-              <span
-                className={`text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
-                onClick={() => navigate(category.path)}
-              >
-                {category.name}
-              </span>
               <div
-                className={`w-full h-[2px] bg-[#FFC451] transition-transform duration-300 ease-in-out transform origin-center ${
-                  selected === category.name
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              ></div>
-            </p>
+                key={index}
+                onClick={() => setSelected(category)}
+                className="group"
+              >
+                <span
+                  className={`text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
+                >
+                  {category}
+                </span>
+
+                <div
+                  className={`w-full h-[2px] bg-[#FFC451] transition-transform duration-300 ease-in-out transform origin-center ${
+                    selected === category
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                ></div>
+              </div>
+            </Link>
           );
         })}
       </div>
-      <img
-        className="w-[30px] cursor-pointer ml-[auto] mr-[32px]"
-        src={heart}
-        alt="here is weblance logo"
-      />
     </header>
   );
 }

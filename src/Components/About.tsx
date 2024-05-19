@@ -3,13 +3,12 @@ import Grains from "../../public/assets/grains.jpg";
 
 function About() {
   return (
-    <div>
+    <div id="about" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E43C5C] ">
         <button className="bg-[#FDEFF2] rounded-full px-[20px] py-[3px]">
           ABOUT
         </button>
       </div>
-
       <div className="flex justify-center items-center text-[30px] mt-[20px]">
         <h1 className="text-[#444444]">
           Learn More <span className="text-[#E43C5C]">About US</span>

@@ -1,5 +1,5 @@
-import { useContext, useRef, useState } from "react";
-import { motion, useCycle, AnimatePresence } from "framer-motion";
+import { useContext, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useDimensions } from "../use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
