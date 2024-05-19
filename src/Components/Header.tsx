@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { MyContext } from "./Context";
-import heart from "../../public/assets/heart.png";
+import logo from "../../public/assets/logo.png";
 import { Link } from "react-scroll";
 
 function Header() {
@@ -59,7 +59,12 @@ function Header() {
         scrolled ? "black" : "transparent"
       } bg-opacity-80 w-[100%] h-[70px] flex fixed justify-between items-center z-[10]`}
     >
-      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[auto] ml-[100px]">
+      <img
+        className="w-[60px] cursor-pointer ml-[32px] mr-[auto]"
+        src={logo}
+        alt="here is weblance logo"
+      />
+      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[100px] ml-[auto]">
         {buttonCategories.map((category, index) => {
           const categoryId = category.toLowerCase().replace(/\s+/g, "-");
           return (
@@ -94,11 +99,6 @@ function Header() {
           );
         })}
       </div>
-      <img
-        className="w-[30px] cursor-pointer ml-[auto] mr-[32px]"
-        src={heart}
-        alt="here is weblance logo"
-      />
     </header>
   );
 }

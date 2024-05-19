@@ -3,7 +3,7 @@ import Grains from "../../public/assets/grains.jpg";
 
 function About() {
   return (
-    <div id="about">
+    <div id="about" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E43C5C] ">
         <button className="bg-[#FDEFF2] rounded-full px-[20px] py-[3px]">
           ABOUT

@@ -57,8 +57,8 @@ export const MenuItem = ({ i }: any) => {
           selected === text[i]
             ? {
                 background:
-                  "linear-gradient(to right, #154938 5%, rgba(21, 73, 56, 0) 50%)",
-                borderLeft: "2px solid #1db954",
+                  "linear-gradient(to left, #154938 10%, rgba(21, 73, 56, 0) 90%)",
+                borderLeft: "(to left, 2px solid rgb(29, 185, 84))",
               }
             : {}
         }
