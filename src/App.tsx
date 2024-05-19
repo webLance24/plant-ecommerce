@@ -1,4 +1,3 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { MyContext } from "./Components/Context";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
@@ -25,16 +24,12 @@ function App() {
           setScrolled,
         }}
       >
-        <Router>
-          <Header />
-          <Example />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </Router>
+        <Header />
+        <Example />
+        <Home />
+        <About />
+        <Services />
+        <Contact />
       </MyContext.Provider>
     </>
   );

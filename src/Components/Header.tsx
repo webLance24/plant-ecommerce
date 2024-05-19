@@ -1,11 +1,9 @@
 import { useContext, useEffect } from "react";
 import { MyContext } from "./Context";
 import heart from "../../public/assets/heart.png";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-scroll";
 
 function Header() {
-  const navigate = useNavigate();
-
   const context = useContext(MyContext);
   const { selected, setSelected, scrolled, setScrolled }: any = context;
 
@@ -68,18 +66,27 @@ function Header() {
     >
       <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[auto] ml-[100px]">
         {buttonCategories.map((category, index) => {
+          const categoryId = category.name.toLowerCase().replace(/\s+/g, "-");
           return (
             <p
               key={index}
               onClick={() => setSelected(category.name)}
               className="group"
             >
-              <span
-                className={`text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
-                onClick={() => navigate(category.path)}
+              <Link
+                key={index}
+                to={categoryId}
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={500}
               >
-                {category.name}
-              </span>
+                <span
+                  className={`text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
+                >
+                  {category.name}
+                </span>
+              </Link>
               <div
                 className={`w-full h-[2px] bg-[#FFC451] transition-transform duration-300 ease-in-out transform origin-center ${
                   selected === category.name
