@@ -117,15 +117,15 @@ li {
 /* hover for hamburger texts */
 
 .menu-item:hover {
-  background: linear-gradient(to left, #154938 5%, rgba(21, 73, 56, 0) 50%);
+  background: linear-gradient(to left, #e3b81e 5%, rgba(21, 73, 56, 0) 70%);
 }
 
 .menu-item:hover p {
-  color: #1ca94f;
+  color: #e3b81e;
 }
 
 .menu-item:hover img {
-  color: #1ca94f;
+  color: #e3b81e;
 }
 
 .menu-item {
@@ -135,5 +135,5 @@ li {
 /* hover for hamburger images */
 
 .menu-item:hover img {
-  filter: invert(60%) sepia(100%) saturate(500%) hue-rotate(110deg);
+  filter: invert(40%) sepia(100%) saturate(400%) hue-rotate(370deg);
 }

@@ -57,8 +57,8 @@ export const MenuItem = ({ i }: any) => {
           selected === text[i]
             ? {
                 background:
-                  "linear-gradient(to left, #154938 10%, rgba(21, 73, 56, 0) 90%)",
-                borderLeft: "(to left, 2px solid rgb(29, 185, 84))",
+                  "linear-gradient(to left, #E3B81E 10%, rgba(21, 73, 56, 0) 70%)",
+                borderLeft: "(to left, 2px solid rgb(227, 184, 30))",
               }
             : {}
         }
@@ -71,7 +71,7 @@ export const MenuItem = ({ i }: any) => {
             style={
               selected === text[i]
                 ? {
-                    color: "#1ca94f",
+                    color: "#E3B81E",
                   }
                 : {}
             }
@@ -86,7 +86,7 @@ export const MenuItem = ({ i }: any) => {
               selected === text[i]
                 ? {
                     filter:
-                      "invert(60%) sepia(100%) saturate(500%) hue-rotate(110deg)",
+                      "invert(40%) sepia(100%) saturate(400%) hue-rotate(370deg)",
                   }
                 : {}
             }

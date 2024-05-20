@@ -64,7 +64,7 @@ function Header() {
         src={logo}
         alt="here is weblance logo"
       />
-      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[100px] ml-[auto]">
+      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[40px] ml-[auto]">
         {buttonCategories.map((category, index) => {
           const categoryId = category.toLowerCase().replace(/\s+/g, "-");
           return (
@@ -82,13 +82,13 @@ function Header() {
                 className="group"
               >
                 <span
-                  className={`text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
+                  className={`uppercase text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
                 >
                   {category}
                 </span>
 
                 <div
-                  className={`w-full h-[2px] bg-[#FFC451] transition-transform duration-300 ease-in-out transform origin-center ${
+                  className={`w-full h-[2px] bg-[#E3B81E] transition-transform duration-300 ease-in-out transform origin-center ${
                     selected === category
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
