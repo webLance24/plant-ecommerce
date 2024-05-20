@@ -28,18 +28,18 @@ function Contact() {
   ];
 
   return (
-    <div id="contact" className="pt-[75px]">
-      <div className="flex justify-center items-center text-[#E3B81E]">
+    <div id="contact" className="pt-[75px] px-[15px]">
+      <div className="flex justify-center items-center text-[#E3B81E] font-bold text-[15px]">
         <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px]">
           CONTACT
         </button>
       </div>
-      <div className="flex justify-center items-center text-[30px] mt-[20px]">
+      <div className="flex justify-center items-center text-[30px] font-bold mt-[20px]">
         <h1 className="text-[#444444]">
           Contact <span className="text-[#E3B81E]">US</span>
         </h1>
       </div>
-      <div className="flex justify-center items-center mt-[15px] m-width-[70px] text-center text-[#444444] px-[10px]">
+      <div className="flex justify-center items-center mt-[15px] m-width-[70px] text-center font-semibold	text-[#444444] px-[15px]">
         <p>
           Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
           adipisci expedita <br /> at voluptas atque vitae autem.
@@ -60,13 +60,13 @@ function Contact() {
       <div className="flex justify-center ml-[20px] flex-col gap-[35px] mt-[80px]">
         {categories.map((category, index) => (
           <div key={index} className="flex gap-[10px]">
-            <div className="flex justify-center items-center gap-[5px] rounded-full p-[7px] bg-[#f6f2e2]">
+            <div className="flex justify-center items-center gap-[5px] rounded-full p-[12px] bg-[#f6f2e2]">
               <img src={category.src} alt={category.title} />
             </div>
             <div>
-              <h4 className="">{category.title}</h4>
+              <h4 className="text-[22px] font-semibold">{category.title}</h4>
               <a href={category.href} target="_blank" rel="noopener noreferrer">
-                <p className="">{category.text}</p>
+                <p className="text-[#816a6e] text-[14px]">{category.text}</p>
               </a>
             </div>
           </div>
