@@ -5,12 +5,12 @@ function About() {
   return (
     <div id="about" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E3B81E] px-[15px]">
-        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px]">
+        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px] font-bold">
           ABOUT
         </button>
       </div>
       <div className="flex justify-center items-center mt-[20px] px-[15px]">
-        <h1 className="text-[#444444] text-[30px] lg:text-[32px] text-[bold]">
+        <h1 className="text-[#444444] text-[30px] lg:text-[32px] font-bold">
           Learn More <span className="text-[#E3B81E]">About US</span>
         </h1>
       </div>
