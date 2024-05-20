@@ -4,15 +4,33 @@ import Gmail from "../../public/assets/Gmail.png";
 
 function Contact() {
   const categories = [
-    { category: "Location", title: "Location", text: "Tbilisi, Georgia", src: Location, href: "https://www.google.com/maps" },
-    { category: "Gmail", title: "Gmail", text: "giomamula20040211@gmail.com", src: Gmail, href: "mailto:giomamula20040211@gmail.com" },
-    { category: "Phone", title: "Number", text: "+995 599 177 612", src: Phone, href: "tel:+995599177612" },
+    {
+      category: "Location",
+      title: "Location",
+      text: "Tbilisi, Georgia",
+      src: Location,
+      href: "https://www.google.com/maps",
+    },
+    {
+      category: "Gmail",
+      title: "Gmail",
+      text: "giomamula20040211@gmail.com",
+      src: Gmail,
+      href: "mailto:giomamula20040211@gmail.com",
+    },
+    {
+      category: "Phone",
+      title: "Number",
+      text: "+995 599 177 612",
+      src: Phone,
+      href: "tel:+995599177612",
+    },
   ];
 
   return (
-    <div>
+    <div id="contact" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E3B81E]">
-        <button className="bg-[#e3b81e63] rounded-full px-[20px] py-[3px]">
+        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px]">
           CONTACT
         </button>
       </div>
@@ -42,8 +60,8 @@ function Contact() {
       <div className="flex justify-center ml-[20px] flex-col gap-[35px] mt-[80px]">
         {categories.map((category, index) => (
           <div key={index} className="flex gap-[10px]">
-            <div className="flex justify-center items-center gap-[5px] rounded-full p-[7px] bg-[#e3b81e63]">
-              <img src={category.src}  alt={category.title} />
+            <div className="flex justify-center items-center gap-[5px] rounded-full p-[7px] bg-[#f6f2e2]">
+              <img src={category.src} alt={category.title} />
             </div>
             <div>
               <h4 className="">{category.title}</h4>

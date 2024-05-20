@@ -8,8 +8,8 @@ function Services() {
 
   return (
     <div id="services" className="pt-[75px]">
-      <div className="flex justify-center items-center text-[#E43C5C] ">
-        <button className="bg-[#FDEFF2] rounded-full px-[20px] py-[3px]">
+      <div className="flex justify-center items-center text-[#E3B81E] ">
+        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px]">
           Services
         </button>
       </div>
@@ -17,7 +17,7 @@ function Services() {
       <div className="flex justify-center items-center text-[30px] mt-[20px] text-center">
         <h1 className="text-[#444444]">
           We do offer awesome{" "}
-          <span className="text-[#E43C5C]">
+          <span className="text-[#E3B81E]">
             <br />
             Services
           </span>
@@ -35,7 +35,7 @@ function Services() {
         {services.map((service, index) => (
           <div
             key={index}
-            className="w-[300px] h-[300px] m-4 bg-gray-200 flex items-center justify-center text-center transform transition-transform duration-300 hover:bg-[#E43C5C] hover:scale-105"
+            className="w-[300px] h-[300px] m-4 bg-gray-200 flex items-center justify-center text-center transform transition-transform duration-300 hover:bg-[#E3B81E] hover:scale-105"
           >
             <p className="text-lg font-bold text-black">{service}</p>
           </div>

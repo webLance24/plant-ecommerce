@@ -1,17 +1,17 @@
-import Rice from "../../public/assets/rice.png";
+import Rice from "../../public/assets/grains.png";
 import Grains from "../../public/assets/grains.jpg";
 
 function About() {
   return (
     <div id="about" className="pt-[75px]">
-      <div className="flex justify-center items-center text-[#E43C5C] ">
-        <button className="bg-[#FDEFF2] rounded-full px-[20px] py-[3px]">
+      <div className="flex justify-center items-center text-[#E3B81E] ">
+        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px]">
           ABOUT
         </button>
       </div>
       <div className="flex justify-center items-center text-[30px] mt-[20px]">
         <h1 className="text-[#444444]">
-          Learn More <span className="text-[#E43C5C]">About US</span>
+          Learn More <span className="text-[#E3B81E]">About US</span>
         </h1>
       </div>
 
