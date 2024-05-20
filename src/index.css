@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Jaro:opsz@6..72&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Teko:wght@300..700&display=swap");
+
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -10,6 +12,7 @@
 
 body {
   background: white;
+  font-family: "Roboto Mono", monospace;
 }
 
 /* home style css */
@@ -88,12 +91,12 @@ li {
   display: flex;
   align-items: center;
   flex-direction: row;
+  justify-content: end;
   gap: 20px;
-  margin-left: 70px;
+  margin-right: 78px;
   border-radius: 5px;
   width: 200px;
   height: 20px;
-  flex: 1;
 }
 
 .refresh {

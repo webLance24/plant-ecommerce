@@ -66,6 +66,18 @@ export const MenuItem = ({ i }: any) => {
         {/* div for text and images which is in hamburger styles */}
 
         <div className="text-placeholder" style={style}>
+          <p
+            className="uppercase text-[14px] font-medium"
+            style={
+              selected === text[i]
+                ? {
+                    color: "#1ca94f",
+                  }
+                : {}
+            }
+          >
+            {text[i]}
+          </p>
           <img
             className="w-[20px] h-[20px] image-hover-effect"
             src={imgs[i]}
@@ -79,18 +91,6 @@ export const MenuItem = ({ i }: any) => {
                 : {}
             }
           />
-          <p
-            className="uppercase text-[14px] font-medium"
-            style={
-              selected === text[i]
-                ? {
-                    color: "#1ca94f",
-                  }
-                : {}
-            }
-          >
-            {text[i]}
-          </p>
         </div>
       </motion.li>
     </Link>
