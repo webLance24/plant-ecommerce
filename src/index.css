@@ -24,11 +24,8 @@ body {
   background-position: center;
   background-blend-mode: color;
   min-height: 100vh;
+  background-attachment: fixed;
 }
-
-/* #about{
-  min-height: 100vh;
-} */
 
 /* here start framer motion styles for humburger */
 
@@ -136,4 +133,15 @@ li {
 
 .menu-item:hover img {
   filter: invert(40%) sepia(100%) saturate(400%) hue-rotate(370deg);
+}
+
+/* this is for about background image style */
+
+#about .bg-image {
+  background-image: url(../public/assets/grains.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  background-attachment: fixed;
 }
