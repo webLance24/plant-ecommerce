@@ -1,7 +1,23 @@
+import { useEffect } from "react";
 import Rice from "../../public/assets/grains.png";
 // import Grains from "../../public/assets/grains.jpg";
+import ScrollReveal from "scrollreveal";
 
 function About() {
+  useEffect(() => {
+    const config = {
+      origin: "bottom",
+      distance: "50px",
+      duration: 1000,
+      delay: 300,
+      opacity: 0,
+      easing: "ease-in-out",
+      reset: false,
+    };
+
+    ScrollReveal().reveal("#about", config);
+  }, []);
+
   return (
     <div id="about" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E3B81E] px-[15px]">

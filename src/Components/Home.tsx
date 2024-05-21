@@ -1,6 +1,22 @@
+import { useEffect } from "react";
 import { Link } from "react-scroll";
+import ScrollReveal from "scrollreveal";
 
 function Home() {
+  useEffect(() => {
+    const config = {
+      origin: "bottom",
+      distance: "50px",
+      duration: 1000,
+      delay: 300,
+      opacity: 0,
+      easing: "ease-in-out",
+      reset: false,
+    };
+
+    ScrollReveal().reveal("#about", config);
+  }, []);
+
   return (
     <div
       id="home"

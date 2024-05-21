@@ -13,6 +13,8 @@ interface ComponentsProps {
   setScrolled: (scrolled: boolean) => void;
   // changeLanguage: string;
   // setChangeLanguage: (changeLanguage: string) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
 }
 
 export const MyContext = createContext<ComponentsProps | null>(null);

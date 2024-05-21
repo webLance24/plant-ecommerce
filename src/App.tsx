@@ -8,11 +8,13 @@ import { Example } from "./Components/Pages/Example";
 import { useState } from "react";
 import { Link } from "react-scroll";
 import arrowup from "../public/assets/arrowup.png";
+import withLoading from "./Components/withLoading";
 
 function App() {
   const [selected, setSelected] = useState<string>("Home");
   const [isOpen, toggleOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   return (
     <>
@@ -24,6 +26,8 @@ function App() {
           toggleOpen,
           scrolled,
           setScrolled,
+          loading,
+          setLoading,
         }}
       >
         <Header />
@@ -60,4 +64,4 @@ function App() {
   );
 }
 
-export default App;
+export default withLoading(App);

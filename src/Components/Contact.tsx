@@ -1,8 +1,24 @@
 import Location from "../../public/assets/Location.png";
 import Phone from "../../public/assets/Phone.png";
 import Gmail from "../../public/assets/Gmail.png";
+import { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 
 function Contact() {
+  useEffect(() => {
+    const config = {
+      origin: "bottom",
+      distance: "50px",
+      duration: 1000,
+      delay: 300,
+      opacity: 0,
+      easing: "ease-in-out",
+      reset: false,
+    };
+
+    ScrollReveal().reveal("#about", config);
+  }, []);
+
   const categories = [
     {
       category: "Location",
