@@ -3,18 +3,19 @@ import { Link } from "react-scroll";
 import ScrollReveal from "scrollreveal";
 
 function Home() {
+  // on scroll show component smooth effect
   useEffect(() => {
     const config = {
       origin: "bottom",
-      distance: "50px",
+      distance: "0px",
       duration: 1000,
       delay: 300,
       opacity: 0,
       easing: "ease-in-out",
-      reset: false,
+      reset: true,
     };
 
-    ScrollReveal().reveal("#about", config);
+    ScrollReveal().reveal("#home", config);
   }, []);
 
   return (

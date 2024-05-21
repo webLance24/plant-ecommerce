@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
 
 function Contact() {
+  // on scroll show component smooth effect
   useEffect(() => {
     const config = {
       origin: "bottom",
@@ -13,10 +14,10 @@ function Contact() {
       delay: 300,
       opacity: 0,
       easing: "ease-in-out",
-      reset: false,
+      reset: true,
     };
 
-    ScrollReveal().reveal("#about", config);
+    ScrollReveal().reveal("#contact", config);
   }, []);
 
   const categories = [

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
 
 function Services() {
+  // on scroll show component smooth effect
   useEffect(() => {
     const config = {
       origin: "bottom",
@@ -10,10 +11,10 @@ function Services() {
       delay: 300,
       opacity: 0,
       easing: "ease-in-out",
-      reset: false,
+      reset: true,
     };
 
-    ScrollReveal().reveal("#about", config);
+    ScrollReveal().reveal("#services", config);
   }, []);
 
   const services = [

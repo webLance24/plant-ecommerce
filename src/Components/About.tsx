@@ -4,6 +4,7 @@ import Rice from "../../public/assets/grains.png";
 import ScrollReveal from "scrollreveal";
 
 function About() {
+  // on scroll show component smooth effect
   useEffect(() => {
     const config = {
       origin: "bottom",
@@ -12,7 +13,7 @@ function About() {
       delay: 300,
       opacity: 0,
       easing: "ease-in-out",
-      reset: false,
+      reset: true,
     };
 
     ScrollReveal().reveal("#about", config);
