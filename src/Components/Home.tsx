@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 function Home() {
   return (
     <div
@@ -15,9 +17,11 @@ function Home() {
       <p className="text-[white] text-[14px] mb-[35px] text-center lg:text-[24px]">
         We are team of talented designers making websites with
       </p>
-      <button className="bg-[rgb(21,22,24,0.5)] rounded-[25px] py-[8px] px-[30px] text-[white]  outline-none border-[white] hover:bg-[#E3B81E] duration-300 ease-in-out border-[1px] uppercase font-bold">
-        Get Started
-      </button>
+      <Link to={"about"} spy={true} smooth={true} offset={0} duration={500}>
+        <button className="bg-[rgb(21,22,24,0.5)] rounded-[25px] py-[8px] px-[30px] text-[white]  outline-none border-[white] hover:bg-[#E3B81E] duration-300 ease-in-out border-[1px] uppercase font-bold">
+          Get Started
+        </button>
+      </Link>
     </div>
   );
 }

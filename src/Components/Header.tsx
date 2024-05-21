@@ -59,11 +59,13 @@ function Header() {
         scrolled ? "black" : "transparent"
       } bg-opacity-80 w-[100%] h-[70px] flex fixed justify-between items-center z-[10]`}
     >
-      <img
-        className="w-[60px] cursor-pointer ml-[32px] mr-[auto]"
-        src={logo}
-        alt="here is weblance logo"
-      />
+      <Link to={"home"} spy={true} smooth={true} offset={0} duration={500}>
+        <img
+          className="w-[60px] cursor-pointer ml-[32px] mr-[auto]"
+          src={logo}
+          alt="here is weblance logo"
+        />
+      </Link>
       <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[40px] ml-[auto]">
         {buttonCategories.map((category, index) => {
           const categoryId = category.toLowerCase().replace(/\s+/g, "-");
