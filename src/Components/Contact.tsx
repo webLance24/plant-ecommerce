@@ -1,8 +1,7 @@
 import Location from "../../public/assets/Location.png";
 import Phone from "../../public/assets/Phone.png";
 import Gmail from "../../public/assets/Gmail.png";
-import Facebook from "../../public/assets/Facebook.png"
-import Instagram from "../../public/assets/Instagram.png"
+
 
 function Contact() {
   const categories = [
