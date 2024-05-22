@@ -7,7 +7,7 @@ function About() {
   // on scroll show component smooth effect
   useEffect(() => {
     const config = {
-      origin: "bottom",
+      origin: "top",
       distance: "50px",
       duration: 1000,
       delay: 300,
@@ -39,8 +39,8 @@ function About() {
         </p>
       </div>
 
-      <div className="flex-wrap justify-center items-center mt-[40px] px-[15px]">
-        <p className="text-center">
+      <div className="flex-wrap justify-center items-center mt-[40px] px-[15px] grid">
+        <p className="text-center md:max-w-[800px] ">
           Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
           irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,

@@ -5,7 +5,7 @@ function Services() {
   // on scroll show component smooth effect
   useEffect(() => {
     const config = {
-      origin: "bottom",
+      origin: "top",
       distance: "50px",
       duration: 1000,
       delay: 300,
