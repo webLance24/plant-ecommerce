@@ -12,7 +12,7 @@ function Home() {
       delay: 300,
       opacity: 0,
       easing: "ease-in-out",
-      reset: true,
+      reset: false,
     };
 
     ScrollReveal().reveal("#home", config);
