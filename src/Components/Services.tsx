@@ -7,10 +7,10 @@ function Services() {
   ];
 
   return (
-    <div id="services" className="pt-[75px] px-[30px]">
+    <div id="services" className="pt-[75px] px-[15px]">
       <div className="flex justify-center items-center text-[15px] text-[#E3B81E] font-bold ">
-        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px] ">
-          Services
+        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px] md:-[13px]">
+          SERVICES
         </button>
       </div>
 

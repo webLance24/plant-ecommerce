@@ -5,7 +5,7 @@ function About() {
   return (
     <div id="about" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E3B81E] px-[15px]">
-        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px] font-bold">
+        <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px] font-bold md:text-[15px]">
           ABOUT
         </button>
       </div>
@@ -22,8 +22,8 @@ function About() {
         </p>
       </div>
 
-      <div className="flex-wrap justify-center items-center mt-[40px] px-[15px]">
-        <p className="text-center">
+      <div className="flex-wrap justify-center items-center mt-[40px] px-[15px] grid">
+        <p className="text-center md:max-w-[800px] ">
           Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
           irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,

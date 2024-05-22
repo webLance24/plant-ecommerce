@@ -15,7 +15,7 @@ function Home() {
       <p className="text-[white] text-[14px] mb-[35px] text-center lg:text-[24px]">
         We are team of talented designers making websites with
       </p>
-      <button className="bg-[rgb(21,22,24,0.5)] rounded-[25px] py-[8px] px-[30px] text-[white]  outline-none border-[white] hover:bg-[#E3B81E] duration-300 ease-in-out border-[1px] uppercase font-bold">
+      <button className="bg-[rgb(21,22,24,0.5)] rounded-[25px] py-[8px] px-[30px] text-[white]  outline-none border-[white] hover:bg-[#E3B81E] duration-300 ease-in-out border-[1px] uppercase font-bold md:text-[13px] md:font-normal">
         Get Started
       </button>
     </div>
