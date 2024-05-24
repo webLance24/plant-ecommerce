@@ -24,7 +24,7 @@ body {
   background-position: center;
   background-blend-mode: color;
   min-height: 100vh;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 /* here start framer motion styles for humburger */
