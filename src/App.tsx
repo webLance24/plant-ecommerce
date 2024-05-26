@@ -15,6 +15,7 @@ function App() {
   const [isOpen, toggleOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
+  const [changeLanguage, setChangeLanguage] = useState<string>("ENG");
 
   return (
     <>
@@ -28,6 +29,8 @@ function App() {
           setScrolled,
           loading,
           setLoading,
+          changeLanguage,
+          setChangeLanguage,
         }}
       >
         <Header />

@@ -2,12 +2,32 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./Context";
 import logo from "../../public/assets/logo.png";
 import { Link } from "react-scroll";
+import geo from "../../public/assets/ge.svg";
+import eng from "../../public/assets/us.svg";
 
 function Header() {
   const context = useContext(MyContext);
-  const { selected, setSelected, scrolled, setScrolled }: any = context;
+  const {
+    selected,
+    setSelected,
+    scrolled,
+    setScrolled,
+    changeLanguage,
+    setChangeLanguage,
+  }: any = context;
 
   const buttonCategories = ["Home", "About", "Services", "Contact"];
+
+  const categories = [
+    {
+      title: "ENG",
+      src: eng,
+    },
+    {
+      title: "GEO",
+      src: geo,
+    },
+  ];
 
   // use useeffect for when header scroll down show background
 
@@ -66,7 +86,7 @@ function Header() {
           alt="here is weblance logo"
         />
       </Link>
-      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[40px] ml-[auto]">
+      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[70px] ml-[auto]">
         {buttonCategories.map((category, index) => {
           const categoryId = category.toLowerCase().replace(/\s+/g, "-");
           return (
@@ -100,6 +120,29 @@ function Header() {
             </Link>
           );
         })}
+        {/* div for languages */}
+        <div className="flex items-center flex-row gap-[10px]">
+          {/* here is languages drop down menu */}
+          <div className="dropdown-content px-[10px] py-[4px] absolute top-[50px] right-[25px] z-10 bg-[#5a6278] w-[60px] rounded-[5px]">
+            {categories.map((category, index) => {
+              return (
+                <div
+                  className="flex items-center flex-row cursor-pointer hover:scale-125 transition-transform duration-500"
+                  key={index}
+                  onClick={() => {
+                    setChangeLanguage(category.title);
+                  }}
+                >
+                  <img
+                    className="w-[15px] h-[15px]"
+                    src={category.src}
+                    alt=""
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </header>
   );
