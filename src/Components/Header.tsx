@@ -86,7 +86,7 @@ function Header() {
           alt="here is weblance logo"
         />
       </Link>
-      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[70px] ml-[auto]">
+      <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[30px] ml-[auto]">
         {buttonCategories.map((category, index) => {
           const categoryId = category.toLowerCase().replace(/\s+/g, "-");
           return (
@@ -108,7 +108,6 @@ function Header() {
                 >
                   {category}
                 </span>
-
                 <div
                   className={`w-full h-[2px] bg-[#E3B81E] transition-transform duration-300 ease-in-out transform origin-center ${
                     selected === category
@@ -120,29 +119,26 @@ function Header() {
             </Link>
           );
         })}
-        {/* div for languages */}
-        <div className="flex items-center flex-row gap-[10px]">
-          {/* here is languages drop down menu */}
-          <div className="dropdown-content px-[10px] py-[4px] absolute top-[50px] right-[25px] z-10 bg-[#5a6278] w-[60px] rounded-[5px]">
-            {categories.map((category, index) => {
-              return (
-                <div
-                  className="flex items-center flex-row cursor-pointer hover:scale-125 transition-transform duration-500"
-                  key={index}
-                  onClick={() => {
-                    setChangeLanguage(category.title);
-                  }}
-                >
-                  <img
-                    className="w-[15px] h-[15px]"
-                    src={category.src}
-                    alt=""
-                  />
-                </div>
-              );
-            })}
-          </div>
-        </div>
+      </div>
+      {/* div for languages */}
+      {/* here is languages drop down menu */}
+      <div className="dropdown-content px-[10px] py-[4px] z-10 rounded-[5px] flex flex-row gap-[10px] mr-[70px] md:mr-[30px]">
+        {categories.map((category, index) => {
+          return (
+            <div
+              key={index}
+              onClick={() => {
+                setChangeLanguage(category.title);
+              }}
+            >
+              <img
+                className="w-[15px] h-[15px] cursor-pointer hover:scale-125 transition-transform duration-500"
+                src={category.src}
+                alt=""
+              />
+            </div>
+          );
+        })}
       </div>
     </header>
   );
