@@ -16,7 +16,12 @@ function Header() {
     setChangeLanguage,
   }: any = context;
 
-  const buttonCategories = ["Home", "About", "Services", "Contact"];
+  const buttonCategories = [
+    { en: "Home", ka: "მთავარი" },
+    { en: "About", ka: "შესახებ" },
+    { en: "Services", ka: "სერვისები" },
+    { en: "Contact", ka: "კონტაქტი" },
+  ];
 
   const categories = [
     {
@@ -50,7 +55,7 @@ function Header() {
   // Function to handle scroll event and update the current section
   const handleScroll = () => {
     const sections = buttonCategories.map((category) =>
-      category.toLowerCase().replace(/\s+/g, "-")
+      category.en.toLowerCase().replace(/\s+/g, "-")
     );
     for (let i = 0; i < sections.length; i++) {
       const section = document.getElementById(sections[i]);
@@ -88,7 +93,7 @@ function Header() {
       </Link>
       <div className="hidden md:flex justify-center items-center flex-row gap-[40px] mr-[30px] ml-[auto]">
         {buttonCategories.map((category, index) => {
-          const categoryId = category.toLowerCase().replace(/\s+/g, "-");
+          const categoryId = category.en.toLowerCase().replace(/\s+/g, "-");
           return (
             <Link
               key={index}
@@ -106,7 +111,7 @@ function Header() {
                 <span
                   className={`uppercase text-[15px] font-semibold pt-[3px] pb-[3px] rounded-[5px] text-[white] duration-300 ease-in-out cursor-pointer`}
                 >
-                  {category}
+                  {changeLanguage === "ENG" ? category.en : category.ka}
                 </span>
                 <div
                   className={`w-full h-[2px] bg-[#E3B81E] transition-transform duration-300 ease-in-out transform origin-center ${

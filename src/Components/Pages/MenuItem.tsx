@@ -24,14 +24,20 @@ const variants = {
   },
 };
 
-const text = ["Home", "About", "Services", "Contact"];
+const text = [
+  { en: "Home", ka: "მთავარი" },
+  { en: "About", ka: "შესახებ" },
+  { en: "Services", ka: "სერვისები" },
+  { en: "Contact", ka: "კონტაქტი" },
+];
 const imgs = [home, search, heart, contact];
 
 export const MenuItem = ({ i }: any) => {
   const context = useContext(MyContext);
-  const { selected, setSelected, isOpen, toggleOpen }: any = context;
+  const { selected, setSelected, isOpen, toggleOpen, changeLanguage }: any =
+    context;
 
-  const categoryId = text[i].toLowerCase();
+  const categoryId = text[i].en.toLowerCase();
 
   const style = { color: "#ffffff" };
   return (
@@ -76,7 +82,7 @@ export const MenuItem = ({ i }: any) => {
                 : {}
             }
           >
-            {text[i]}
+            {changeLanguage === "ENG" ? text[i].en : text[i].ka}
           </p>
           <img
             className="w-[20px] h-[20px] image-hover-effect"
