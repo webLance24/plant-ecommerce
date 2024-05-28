@@ -12,7 +12,7 @@ interface ComponentsProps {
   scrolled: boolean;
   setScrolled: (scrolled: boolean) => void;
   // changeLanguage: string;
-  // setChangeLanguage: (changeLanguage: string) => void;
+  setChangeLanguage: (changeLanguage: string) => void;
   loading: boolean;
   setLoading: (loading: boolean) => void;
   changeLanguage: string;
