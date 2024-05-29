@@ -1,9 +1,13 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import Rice from "../../public/assets/grains.png";
 // import Grains from "../../public/assets/grains.jpg";
 import ScrollReveal from "scrollreveal";
+import { MyContext } from "./Context";
 
 function About() {
+  const context = useContext(MyContext);
+  const { changeLanguage }: any = context;
+
   // on scroll show component smooth effect
   useEffect(() => {
     const config = {
@@ -23,42 +27,47 @@ function About() {
     <div id="about" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E3B81E] px-[15px]">
         <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px] font-bold">
-          ABOUT
+          {changeLanguage === "ENG" ? "About" : "შესახებ"}
         </button>
       </div>
       <div className="flex justify-center items-center mt-[20px] px-[15px]">
         <h1 className="text-[#444444] text-[30px] lg:text-[32px] font-bold">
-          Learn More <span className="text-[#E3B81E]">About US</span>
+          {changeLanguage === "ENG" ? "Learn More" : "გაიგეთ მეტი"}{" "}
+          <span className="text-[#E3B81E]">
+            {changeLanguage === "ENG" ? "About Us" : "ჩვენს შესახებ"}
+          </span>
         </h1>
       </div>
 
       <div className="flex justify-center items-center mt-[15px] m-width-[70px] text-center text-[#444444] px-[15px]">
         <p>
-          Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-          adipisci expedita <br /> at voluptas atque vitae autem.
+          {changeLanguage === "ENG"
+            ? "We are one of the leading grain importing companies in the Caucasus region"
+            : "ჩვენ ვართ კავკასიის რეგიონში ერთ-ერთი წამყვანი ბურღულეულის შემომტანი კომპანია"}
         </p>
       </div>
 
       <div className="flex-wrap justify-center items-center mt-[40px] px-[15px] grid">
         <p className="text-center md:max-w-[800px] ">
-          Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-          fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-          sunt in culpa qui officia deserunt mollit anim id est laborum.
+          {changeLanguage === "ENG"
+            ? "We have been active in the market for several years, have satisfied customers, and our goal is to offer quality products to them."
+            : "ჩვენ აქტიურად ვართ ბაზარზე უკვე რამდენიმე წელია, გვყავს კმაყოფილი მომხმარებლები და ჩვენი მიზანია მომხარებლებს შევთავაზოთ ხარისხიანი პროდუქცია"}
         </p>
 
-        <div className="mt-[20px]">
-          <p className="flex items-center justify-center gap-[5px]">
+        <div className="mt-[20px] m-auto flex flex-col">
+          <p className="flex items-center gap-[5px]">
             <img src={Rice} alt="" className="w-[25px] h-[25px]" />
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat
+            {changeLanguage === "ENG"
+              ? "Quality products"
+              : "ხარისხიანი პროდუქცია"}
           </p>
-          <p className="flex items-center justify-center gap-[5px]">
+          <p className="flex items-center gap-[5px]">
             <img src={Rice} alt="" className="w-[25px] h-[25px]" />
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat
+            {changeLanguage === "ENG" ? "Best prices" : "საუკეთესო ფასები"}
           </p>
-          <p className="flex items-center justify-center gap-[5px]">
+          <p className="flex items-center gap-[5px]">
             <img src={Rice} alt="" className="w-[25px] h-[25px]" />
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat
+            {changeLanguage === "ENG" ? "Fast service" : "სწრაფი მომსახურება"}
           </p>
         </div>
       </div>
@@ -67,7 +76,9 @@ function About() {
         {/* <img src={Grains} alt="Grains" className="w-full h-auto" /> */}
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white text-2xl font-bold">Intel Express</span>
+          <span className="text-[#E3B81E] text-2xl font-bold ">
+            Express Trade
+          </span>
         </div>
       </div>
     </div>
