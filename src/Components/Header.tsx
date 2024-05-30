@@ -64,7 +64,11 @@ function Header() {
         section.offsetTop <= window.scrollY + 100 &&
         section.offsetTop + section.offsetHeight > window.scrollY + 100
       ) {
-        setSelected(buttonCategories[i]);
+        setSelected(
+          changeLanguage === "ENG"
+            ? buttonCategories[i].en
+            : buttonCategories[i].ka
+        );
         break;
       }
     }
@@ -77,6 +81,8 @@ function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []); // Empty dependency array ensures that the effect runs only once when component mounts
+
+  console.log(selected);
 
   return (
     <header
@@ -105,7 +111,11 @@ function Header() {
             >
               <div
                 key={index}
-                onClick={() => setSelected(category)}
+                onClick={() =>
+                  setSelected(
+                    changeLanguage === "ENG" ? category.en : category.ka
+                  )
+                }
                 className="group"
               >
                 <span
@@ -115,7 +125,8 @@ function Header() {
                 </span>
                 <div
                   className={`w-full h-[2px] bg-[#E3B81E] transition-transform duration-300 ease-in-out transform origin-center ${
-                    selected === category
+                    selected ===
+                    (changeLanguage === "ENG" ? category.en : category.ka)
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
                   }`}
