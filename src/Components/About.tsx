@@ -74,7 +74,7 @@ function About() {
 
       <div className="relative mt-[30px] bg-image">
         {/* <img src={Grains} alt="Grains" className="w-full h-auto" /> */}
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <span className="text-[#E3B81E] text-2xl font-bold ">
             Express Trade

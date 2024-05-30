@@ -133,7 +133,7 @@ function Contact() {
           <div className="flex justify-center items-center mt-[20px]">
             <h1 className="text-[#E3B81E]">
               <span className="text-[#fff]">
-                {changeLanguage === "ENG" ? "Made by" : "დაამზადა "}
+                {changeLanguage === "ENG" ? "Made by " : "დაამზადა "}
               </span>
               <a href="https://www.weblance.ge/" target="_blank">
                 @webLance

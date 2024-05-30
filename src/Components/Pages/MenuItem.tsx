@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import contact from "../../../public/assets/contact.png";
-import heart from "../../../public/assets/heart.png";
+import about from "../../../public/assets/about.png";
 import home from "../../../public/assets/home.png";
-import search from "../../../public/assets/search.png";
+import services from "../../../public/assets/services-img.png";
 import { MyContext } from "../Context";
 import { useContext } from "react";
 import { Link } from "react-scroll";
@@ -30,7 +30,7 @@ const text = [
   { en: "Services", ka: "სერვისები" },
   { en: "Contact", ka: "კონტაქტი" },
 ];
-const imgs = [home, search, heart, contact];
+const imgs = [home, about, services, contact];
 
 export const MenuItem = ({ i }: any) => {
   const context = useContext(MyContext);
@@ -56,26 +56,25 @@ export const MenuItem = ({ i }: any) => {
         whileTap={{ scale: 0.95 }}
         className="menu-item"
         onClick={() => {
-          setSelected(text[i]);
+          setSelected(changeLanguage === "ENG" ? text[i].en : text[i].ka);
           toggleOpen(!isOpen);
         }}
         style={
-          selected === text[i]
+          selected === (changeLanguage === "ENG" ? text[i].en : text[i].ka)
             ? {
                 background:
                   "linear-gradient(to left, #E3B81E 10%, rgba(21, 73, 56, 0) 70%)",
-                borderLeft: "(to left, 2px solid rgb(227, 184, 30))",
+                borderLeft: "2px solid rgb(227, 184, 30)",
               }
             : {}
         }
       >
         {/* div for text and images which is in hamburger styles */}
-
         <div className="text-placeholder" style={style}>
           <p
             className="uppercase text-[14px] font-medium"
             style={
-              selected === text[i]
+              selected === (changeLanguage === "ENG" ? text[i].en : text[i].ka)
                 ? {
                     color: "#E3B81E",
                   }
@@ -89,7 +88,7 @@ export const MenuItem = ({ i }: any) => {
             src={imgs[i]}
             alt="here add images for each text"
             style={
-              selected === text[i]
+              selected === (changeLanguage === "ENG" ? text[i].en : text[i].ka)
                 ? {
                     filter:
                       "invert(40%) sepia(100%) saturate(400%) hue-rotate(370deg)",

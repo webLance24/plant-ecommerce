@@ -82,8 +82,6 @@ function Header() {
     };
   }, []); // Empty dependency array ensures that the effect runs only once when component mounts
 
-  console.log(selected);
-
   return (
     <header
       className={`bg-${

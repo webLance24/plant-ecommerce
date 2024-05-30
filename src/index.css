@@ -18,7 +18,7 @@ body {
 /* home style css */
 
 #home {
-  background-image: url("../public/assets/grains-bg.jpg");
+  background-image: url("../public/assets/grains.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -138,7 +138,7 @@ li {
 /* this is for about background image style */
 
 #about .bg-image {
-  background-image: url("../public/assets/grains.jpg");
+  background-image: url("../public/assets/grains-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
