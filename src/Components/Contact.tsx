@@ -1,10 +1,14 @@
 import Location from "../../public/assets/Location.png";
 import Phone from "../../public/assets/Phone.png";
 import Gmail from "../../public/assets/Gmail.png";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import ScrollReveal from "scrollreveal";
+import { MyContext } from "./Context";
 
 function Contact() {
+  const context = useContext(MyContext);
+  const { changeLanguage }: any = context;
+
   // on scroll show component smooth effect
   useEffect(() => {
     const config = {
@@ -22,23 +26,26 @@ function Contact() {
 
   const categories = [
     {
-      category: "Location",
-      title: "Location",
-      text: "Tbilisi, Georgia",
+      category: { en: "Location", ka: "ადგილმდებარეობა" },
+      title: { en: "Location", ka: "ადგილმდებარეობა" },
+      text: { en: "Tbilisi, Georgia", ka: "თბილისი, საქართველო" },
       src: Location,
       href: "https://www.google.com/maps",
     },
     {
-      category: "Gmail",
-      title: "Gmail",
-      text: "giomamula20040211@gmail.com",
+      category: { en: "Gmail", ka: "ელ-ფოსტა" },
+      title: { en: "Gmail", ka: "ელ-ფოსტა" },
+      text: {
+        en: "giomamula20040211@gmail.com",
+        ka: "giomamula20040211@gmail.com",
+      },
       src: Gmail,
       href: "mailto:giomamula20040211@gmail.com",
     },
     {
-      category: "Phone",
-      title: "Number",
-      text: "+995 599 177 612",
+      category: { en: "Phone", ka: "მობილური" },
+      title: { en: "Number", ka: "ნომერი" },
+      text: { en: "+995 599 177 612", ka: "+995 599 177 612" },
       src: Phone,
       href: "tel:+995599177612",
     },
@@ -48,22 +55,26 @@ function Contact() {
     <div id="contact" className="pt-[75px]">
       <div className="flex justify-center items-center text-[#E3B81E] font-bold text-[15px]">
         <button className="bg-[#f6f2e2] rounded-full px-[20px] py-[3px]">
-          CONTACT
+          {changeLanguage === "ENG" ? "CONTACT" : "კონტაქტი"}
         </button>
       </div>
       <div className="flex justify-center items-center text-[30px] font-bold mt-[20px]">
         <h1 className="text-[#444444]">
-          Contact <span className="text-[#E3B81E]">US</span>
+          {changeLanguage === "ENG" ? "Contact" : "დაგვიკავშირდით"}
+          <span className="text-[#E3B81E]">
+            {changeLanguage === "ENG" ? " US" : ""}
+          </span>
         </h1>
       </div>
       <div className="flex justify-center items-center mt-[15px] m-width-[70px] text-center font-semibold	text-[#444444] px-[15px]">
         <p>
-          Ut possimus qui ut temporibus culpa velit eveniet modi omnis est
-          adipisci expedita <br /> at voluptas atque vitae autem.
+          {changeLanguage === "ENG"
+            ? "Contact us and get the best products"
+            : "დაგვიკავშირდით და მიიღეთ საუკეთესო პროდუქცია"}
         </p>
       </div>
 
-      <div className="max-w-[770px] mt-[40px] lg:max-w-[948px] xl:max-w-[1674px] 2xl:max-w-[1944px] px-[15px]">
+      <div className="max-w-[770px] mt-[60px] md:max-w-[1240px]  xl:max-w-[1674px] 2xl:max-w-[1944px] px-[15px]">
         <iframe
           width="100%"
           height="350px"
@@ -74,16 +85,31 @@ function Contact() {
         ></iframe>
       </div>
 
-      <div className="flex justify-center ml-[20px] flex-col gap-[35px] mt-[80px]  lg:flex-row lg:gap-[190px] mb-[40px] px-[15px]">
+      <div className="flex justify-center ml-[20px] flex-col gap-[35px] mt-[60px] lg:flex-row lg:gap-[144px] mb-[60px] px-[15px]">
         {categories.map((category, index) => (
           <div key={index} className="flex gap-[10px]">
             <div className="flex justify-center items-center gap-[5px] rounded-full p-[12px] bg-[#f6f2e2]">
-              <img src={category.src} alt={category.title} />
+              <img
+                src={category.src}
+                alt={
+                  changeLanguage === "ENG"
+                    ? category.title.en
+                    : category.title.ka
+                }
+              />
             </div>
             <div>
-              <h4 className="text-[22px] font-semibold">{category.title}</h4>
+              <h4 className="text-[22px] font-semibold">
+                {changeLanguage === "ENG"
+                  ? category.title.en
+                  : category.title.ka}
+              </h4>
               <a href={category.href} target="_blank" rel="noopener noreferrer">
-                <p className="text-[#816a6e] text-[14px]">{category.text}</p>
+                <p className="text-[#816a6e] text-[14px]">
+                  {changeLanguage === "ENG"
+                    ? category.text.en
+                    : category.text.ka}
+                </p>
               </a>
             </div>
           </div>
@@ -96,7 +122,9 @@ function Contact() {
           </h1>
 
           <p className="text-[#E3B81E] text-[15px] flex items-center justify-center pt-[10px]">
-            Stay in touch with us
+            {changeLanguage === "ENG"
+              ? "Stay in touch with us"
+              : "დარჩით ჩვენთან"}
           </p>
           {/* <div className="flex justify-center items-center gap-[15px] mt-[20px]">
         <img src={Facebook} alt="" />
@@ -104,7 +132,9 @@ function Contact() {
         </div> */}
           <div className="flex justify-center items-center mt-[20px]">
             <h1 className="text-[#E3B81E]">
-              <span className="text-[#fff]">Made by </span>
+              <span className="text-[#fff]">
+                {changeLanguage === "ENG" ? "Made by" : "დაამზადა "}
+              </span>
               <a href="https://www.weblance.ge/" target="_blank">
                 @webLance
               </a>
