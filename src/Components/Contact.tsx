@@ -36,18 +36,18 @@ function Contact() {
       category: { en: "Gmail", ka: "ელ-ფოსტა" },
       title: { en: "Gmail", ka: "ელ-ფოსტა" },
       text: {
-        en: "giomamula20040211@gmail.com",
-        ka: "giomamula20040211@gmail.com",
+        en: "example@gmail.com",
+        ka: "example@gmail.com",
       },
       src: Gmail,
-      href: "mailto:giomamula20040211@gmail.com",
+      href: "mailto:exapmle@gmail.com",
     },
     {
       category: { en: "Phone", ka: "მობილური" },
       title: { en: "Number", ka: "ნომერი" },
-      text: { en: "+995 599 177 612", ka: "+995 599 177 612" },
+      text: { en: "+995 555 444 333", ka: "+995 555 444 333" },
       src: Phone,
-      href: "tel:+995599177612",
+      href: "tel:+995555444333",
     },
   ];
 
