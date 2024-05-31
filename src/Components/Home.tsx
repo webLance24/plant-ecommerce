@@ -28,17 +28,17 @@ function Home() {
       className="flex justify-center items-center flex-col px-[12px] bg-[black] bg-opacity-70"
     >
       <div className="bg-[rgb(21,22,24,0.5)] text-center rounded-[25px] py-[10px] px-[30px] mb-[15px] lg:mb-[30px] outline-none">
-        <h3 className="text-[20px] text-[white] font-light lg:text-[26px]">
+        <h3 className="text-[18px] text-[white] font-light md:text-[22px] lg:text-[26px]">
           {changeLanguage === "ENG" ? "Welcome To " : "მოგესალმებით "}
           <span className="text-[#E3B81E] font-bold">Express Trade</span>
         </h3>
       </div>
-      <h1 className="text-[white] text-[28px] lg:text-[38px] text-center uppercase">
+      <h1 className="text-[white] text-[25px] md:text-[30px] lg:text-[38px] text-center uppercase">
         {changeLanguage === "ENG"
           ? "We Are a Grain Import Company"
           : "ჩვენ ვართ ბურღულეულის იმპორტიორი კომპანია"}
       </h1>
-      <p className="text-[white] text-[14px] mb-[35px] text-center lg:text-[24px]">
+      <p className="text-[white] text-[14px] md:text-[20px] mb-[35px] text-center lg:text-[24px]">
         {changeLanguage === "ENG"
           ? "In Georgia Azerbaijan and Armenia"
           : "საქართველოში აზერბაიჯანსა და სომხეთში"}

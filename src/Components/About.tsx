@@ -31,8 +31,8 @@ function About() {
         </button>
       </div>
       <div className="flex justify-center items-center mt-[20px] px-[15px]">
-        <h1 className="text-[#444444] text-[27px] lg:text-[32px] font-bold">
-          {changeLanguage === "ENG" ? "Learn More" : "გაიგეთ მეტი"}{" "}
+        <h1 className="text-[#444444] text-[25px] md:text-[28px] lg:text-[32px] font-bold">
+          {changeLanguage === "ENG" ? "Learn More" : "გაიგეთ მეტი "}
           <span className="text-[#E3B81E]">
             {changeLanguage === "ENG" ? "About Us" : "ჩვენს შესახებ"}
           </span>
