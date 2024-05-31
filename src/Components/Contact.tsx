@@ -28,7 +28,7 @@ function Contact() {
     {
       category: { en: "Location", ka: "ადგილმდებარეობა" },
       title: { en: "Location", ka: "ადგილმდებარეობა" },
-      text: { en: "Tbilisi, Georgia", ka: "თბილისი, საქართველო" },
+      text: { en: "Kutaisi, Georgia", ka: "ქუთაისი, საქართველო" },
       src: Location,
       href: "https://www.google.com/maps",
     },
