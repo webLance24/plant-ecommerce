@@ -37,7 +37,7 @@ function Services() {
       </div>
 
       <div className="flex justify-center items-center font-bold mt-[20px] text-center ">
-        <h1 className="text-[#444444] text-[24px] md:text-[28px] lg:text-[32px]">
+        <h1 className="text-[#444444] text-[22px] md:text-[28px] lg:text-[32px]">
           {changeLanguage === "ENG"
             ? "We do offer awesome"
             : "ჩვენ გთავაზობთ გასაოცარ"}
