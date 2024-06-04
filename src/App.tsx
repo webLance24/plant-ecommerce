@@ -11,7 +11,7 @@ import arrowup from "../public/assets/arrowup.png";
 import withLoading from "./Components/withLoading";
 
 function App() {
-  const [selected, setSelected] = useState<string>("Home");
+  const [selected, setSelected] = useState<string[]>(["Home", "მთავარი"]);
   const [isOpen, toggleOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(true);
@@ -45,7 +45,7 @@ function App() {
           smooth={true}
           offset={0}
           duration={500}
-          onClick={() => setSelected("Home")}
+          onClick={() => setSelected(["Home"])}
         >
           <div
             className={`fixed right-[10px] bottom-[10px] circle cursor-pointer w-[40px] h-[40px] rounded-[50%] hover:bg-[#dccd97] duration-300 ease-in-out outline-none bg-[${

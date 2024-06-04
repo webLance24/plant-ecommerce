@@ -30,7 +30,7 @@ function Home() {
       <div className="bg-[rgb(21,22,24,0.5)] text-center rounded-[25px] py-[10px] px-[30px] mb-[15px] lg:mb-[30px] outline-none">
         <h3 className="text-[18px] text-[white] font-light md:text-[22px] lg:text-[26px]">
           {changeLanguage === "ENG" ? "Welcome To " : "მოგესალმებით "}
-          <span className="text-[#E3B81E] font-bold">Express Trade</span>
+          <span className="text-[#E3B81E] font-bold">Exspress Trade</span>
         </h3>
       </div>
       <h1 className="text-[white] text-[25px] md:text-[30px] lg:text-[38px] text-center uppercase">

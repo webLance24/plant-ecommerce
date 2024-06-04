@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./Context";
 import logo from "../../public/assets/logo.png";
 import { Link } from "react-scroll";
@@ -7,14 +7,13 @@ import eng from "../../public/assets/us.svg";
 
 function Header() {
   const context = useContext(MyContext);
-  const {
-    selected,
-    setSelected,
-    scrolled,
-    setScrolled,
-    changeLanguage,
-    setChangeLanguage,
-  }: any = context;
+  const { scrolled, setScrolled, changeLanguage, setChangeLanguage }: any =
+    context;
+
+  const [selected, setSelected] = useState<{ en: string; ka: string }>({
+    en: "Home",
+    ka: "მთავარი",
+  });
 
   const buttonCategories = [
     { en: "Home", ka: "მთავარი" },
@@ -34,8 +33,6 @@ function Header() {
     },
   ];
 
-  // use useeffect for when header scroll down show background
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -52,7 +49,6 @@ function Header() {
     };
   }, []);
 
-  // Function to handle scroll event and update the current section
   const handleScroll = () => {
     const sections = buttonCategories.map((category) =>
       category.en.toLowerCase().replace(/\s+/g, "-")
@@ -64,23 +60,21 @@ function Header() {
         section.offsetTop <= window.scrollY + 100 &&
         section.offsetTop + section.offsetHeight > window.scrollY + 100
       ) {
-        setSelected(
-          changeLanguage === "ENG"
-            ? buttonCategories[i].en
-            : buttonCategories[i].ka
-        );
+        setSelected({
+          en: buttonCategories[i].en,
+          ka: buttonCategories[i].ka,
+        });
         break;
       }
     }
   };
 
-  // Effect to add scroll event listener when component mounts
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []); // Empty dependency array ensures that the effect runs only once when component mounts
+  }, []);
 
   return (
     <header
@@ -110,9 +104,10 @@ function Header() {
               <div
                 key={index}
                 onClick={() =>
-                  setSelected(
-                    changeLanguage === "ENG" ? category.en : category.ka
-                  )
+                  setSelected({
+                    en: category.en,
+                    ka: category.ka,
+                  })
                 }
                 className="group"
               >
@@ -123,7 +118,7 @@ function Header() {
                 </span>
                 <div
                   className={`w-full h-[2px] bg-[#E3B81E] transition-transform duration-300 ease-in-out transform origin-center ${
-                    selected ===
+                    selected[changeLanguage === "ENG" ? "en" : "ka"] ===
                     (changeLanguage === "ENG" ? category.en : category.ka)
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
@@ -134,8 +129,6 @@ function Header() {
           );
         })}
       </div>
-      {/* div for languages */}
-      {/* here is languages drop down menu */}
       <div className="dropdown-content px-[10px] py-[4px] z-10 rounded-[5px] flex flex-row gap-[10px] mr-[70px] md:mr-[30px]">
         {categories.map((category, index) => {
           return (

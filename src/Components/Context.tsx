@@ -5,8 +5,8 @@ interface ComponentsProps {
   // setHidden: (hidden: boolean) => void;
   // menu: boolean;
   // setMenu: (menu: boolean) => void;
-  selected: string;
-  setSelected: (selected: string) => void;
+  selected: string[];
+  setSelected: (selected: string[]) => void;
   isOpen: boolean;
   toggleOpen: (isOpen: boolean) => void;
   scrolled: boolean;
