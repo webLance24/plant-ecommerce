@@ -4,7 +4,7 @@ import about from "../../../public/assets/about.png";
 import home from "../../../public/assets/home.png";
 import services from "../../../public/assets/services-img.png";
 import { MyContext } from "../Context";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-scroll";
 
 const variants = {
@@ -34,12 +34,8 @@ const imgs = [home, about, services, contact];
 
 export const MenuItem = ({ i }: any) => {
   const context = useContext(MyContext);
-  const { isOpen, toggleOpen, changeLanguage }: any = context;
-
-  const [selected, setSelected] = useState<{ en: string; ka: string }>({
-    en: "Home",
-    ka: "მთავარი",
-  });
+  const { selected, setSelected, isOpen, toggleOpen, changeLanguage }: any =
+    context;
 
   const categoryId = text[i].en.toLowerCase();
 
@@ -53,6 +49,9 @@ export const MenuItem = ({ i }: any) => {
       smooth={true}
       offset={0}
       duration={500}
+      onSetActive={() => {
+        setSelected({ en: text[i].en, ka: text[i].ka });
+      }}
     >
       <motion.li
         variants={variants}
